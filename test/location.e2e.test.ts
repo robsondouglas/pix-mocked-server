@@ -5,8 +5,7 @@ import { AppModule } from '../src/app.module';
 import { randomUUID } from 'crypto';
 import { MemoryDB } from '../src/libs/fakedb';
 import { correntistas } from '../src/data/db.json'
-import { gerarCNPJ } from '../src/libs/documentos';
-import { ModalidadeAlteracao, TipoCob } from '../src/core/app/models';
+import { TipoCob } from '../src/core/app/models';
 
 describe('LOC', () => {
     let app: INestApplication;

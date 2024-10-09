@@ -93,7 +93,6 @@ export class MemoryDB {
     }
 
     async remove(clusterKey: string, sortKey?: { [name: string]: string | number }): Promise<boolean> {
-        console.log(sortKey)
         this.skValidate(sortKey)
         let curr = await this.read(clusterKey, sortKey);
         if (!curr) {

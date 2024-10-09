@@ -7,7 +7,7 @@ import { MESSAGES } from "../../libs/messages";
 import { CobGetResponse, CobPatchRequest, CobPutRequest, CobPutResponse, CobGetFilter, CobPatchResponse } from "./models/cob";
 import { LocGetResponse, LocGetFilter, LocID, LocPutRequest, LocPutResponse } from "./models/loc";
 import { CobVGetFilter, CobVGetResponse, CobVPatchRequest, CobVPatchResponse, CobVPutRequest, CobVPutResponse, CobVValor } from "./models/cobv";
-import { CobRPutResponse } from "./models/cobr";
+import { CobRPutRequest, CobRPutResponse } from "./models/cobr";
 import { PoliticaRetentativa, RecPostRequest, RecRequest } from "./models/rec";
 import { owners } from '../../data/db.json'
 
@@ -15,6 +15,8 @@ import { owners } from '../../data/db.json'
 export class PSP {
 
     private cob: MemoryDB;
+    private cobR: MemoryDB;
+    private cobV: MemoryDB;
     private transHist: MemoryDB;
     private locations: MemoryDB;
     private correntistas: MemoryDB;
@@ -26,7 +28,8 @@ export class PSP {
         this.cob = MemoryDB.get("COB");
         this.transHist = MemoryDB.get("COB_HIST");
 
-        this.cob = MemoryDB.get("COBR");
+        this.cobR = MemoryDB.get("COBR");
+        this.cobV = MemoryDB.get("COBV");
 
         this.locations = MemoryDB.get("LOCATIONS");
         this.correntistas = MemoryDB.get("CORRENTISTAS");
@@ -94,7 +97,7 @@ export class PSP {
         return (await this._addCob(itm, TipoCob.imediato)) as CobPutResponse;
     }
 
-    async addCobR(itm: PixRequest<CobPutRequest>): Promise<CobRPutResponse> {
+    async addCobR(itm: PixRequest<CobRPutRequest>): Promise<CobRPutResponse> {
 
 
         return null;

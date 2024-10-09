@@ -4,6 +4,7 @@ import { Type } from "class-transformer"
 import { IntersectionType } from '@nestjs/swagger';
 import { IsCNPJValid, IsCPFValid, IsDICTExists, IsDICTValid, MinStringNumber } from "../../../validators/custom-validators";
 import { LocID, LocGetRequest } from "./loc";
+import { PoliticaRetentativa } from "./rec";
 
 /** 	
 Todos os campos que indicam valores monetários obedecem ao pattern \d{1,10}.\d{2}. O separador decimal é o caractere ponto. Não é aplicável utilizar separador de milhar. Exemplos de valores aderentes ao padrão: “1.00”, “123.99”, “123456789.23" */

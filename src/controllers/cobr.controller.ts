@@ -22,14 +22,14 @@ export class CobRController {
     const IdOwner = headers["IdOwner"];
     const txid: string = randomUUID().replace(/\-/g, '')
     const itm: PixRequest<CobRPutRequest> = { IdOwner, txid, data }
-    return await this.pspService.addCob(itm);
+    return await this.pspService.addCobR(itm);
   }
 
   @Post(":txid/retentativa/:data")
   async createRetentativa(@Body() data: CobRPutRequest, @Param("txid") txid, @Headers() headers) {
     const IdOwner = headers["IdOwner"];
     const itm: PixRequest<CobRPutRequest> = { IdOwner, txid, data }
-    return await this.pspService.addCob(itm);
+    return await this.pspService.addCobR(itm);
   }
 
 
