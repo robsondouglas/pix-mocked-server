@@ -1,0 +1,6 @@
+{
+    "name": "PIX_MOCKED_SERVER",
+    "image": "node:20",
+    "postCreateCommand": "npm i -g @nestjs/cli && npm i"
+
+}

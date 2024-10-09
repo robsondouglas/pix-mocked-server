@@ -1,0 +1,47 @@
+{
+    "correntistas": [
+        {
+            "chave": "7c37c936-9848-44b3-b2d8-7e48f17a20ec",
+            "cpfcnpj": "63362405000190",
+            "nome": "Cliente 1 LTDA",
+            "Cidade": "Rio de Janeiro"
+        },
+        {
+            "chave": "538a8df3-71e6-4032-8e93-c028345c76d9",
+            "cpfcnpj": "52198734311",
+            "nome": "José da Silva",
+            "Cidade": "São Paulo"
+        },
+        {
+            "chave": "05e16e75-7e13-49ae-9efc-d7df491440c1",
+            "cpfcnpj": "73367885000135",
+            "nome": "Cliente 2 LTDA",
+            "Cidade": "Nova Iguaçu"
+        }
+    ],
+    "owners": [
+        {
+            "id": "0d9094da-3e89-4a5e-a87c-0805015dae2e",
+            "token": "123-abc",
+            "ISPB": "0d9094da"
+        },
+        {
+            "id": "4aa5cce5-1927-4c96-a7bc-2c707510f207",
+            "token": "456-def",
+            "ISPB": "4aa5cce5"
+        },
+        {
+            "id": "84dc48b6-05d9-4af6-9d84-3899228dda1e",
+            "token": "789-ghi",
+            "ISPB": "84dc48b6"
+        },
+        {
+            "id": "97d8f377-5930-47c4-b907-345c74ee41ca",
+            "token": "012-fab"
+        },
+        {
+            "id": "85a13882-a6b2-4299-b774-72d6b26f65bc",
+            "token": "345-cde"
+        }
+    ]
+}
