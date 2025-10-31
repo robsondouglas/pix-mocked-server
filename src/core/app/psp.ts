@@ -379,7 +379,7 @@ export class PSP {
         }
 
         const itm = { ...mdl.data, idRec: `R${mdl.data.politicaRetentativa === PoliticaRetentativa.NaoPermite ? 'N' : 'R'}${ own.ISPB }${ new Date().toJSON().replace(/\D/g,'').substring(0,8) } `    }
-        return await this.rec.add(mdl.IdOwner, mdl.data);
+        return await this.rec.add(mdl.IdOwner, itm);
     }
 }
 

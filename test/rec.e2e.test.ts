@@ -72,7 +72,7 @@ describe('REC', () => {
                 it('objeto: empty', async () => await expectPost400(app, `/rec`, { ...itm, vinculo: { ...itm.vinculo, objeto: "" } }, detail, [{ razao: "O campo rec.vinculo.objeto não respeita o schema.", propriedade: "rec.vinculo.objeto" }]));
 
                 it('contrato: length>35', async () => await expectPost400(app, `/rec`, { ...itm, vinculo: { ...itm.vinculo, contrato: "".padEnd(36, 'x') } }, detail, [{ razao: "O campo rec.vinculo.contrato não respeita o schema.", propriedade: "rec.vinculo.contrato" }]));
-                it('contrato: empty', async () => await  expectPost400(app, `/rec`, { ...itm, vinculo: { ...itm.vinculo, contrato: "" } }, detail, [{ razao: "O campo rec.vinculo.contrato não respeita o schema.", propriedade: "rec.vinculo.contrato" }]));
+                it('contrato: empty', async () => await expectPost400(app, `/rec`, { ...itm, vinculo: { ...itm.vinculo, contrato: "" } }, detail, [{ razao: "O campo rec.vinculo.contrato não respeita o schema.", propriedade: "rec.vinculo.contrato" }]));
 
                 it('devedor: empty', async () => await expectPost400(app, `/rec`, { ...itm, vinculo: { ...itm.vinculo, devedor: undefined } }, detail, [{ razao: "O objeto rec.vinculo.devedor não respeita o schema.", propriedade: "rec.vinculo.devedor" }]));
 
@@ -118,10 +118,9 @@ describe('REC', () => {
             it('Cabeçalho Inválido', () => expectPost401(app, '/rec', itm, false));
         });
 
-        describe('201', ()=>{
-            it('sucesso', async () => await expectPost201(app, `/rec`, itm, {valor: { valorRec: "1000.00" }}));
-            
-        })
+        describe('201', () => {
+            it('sucesso', async () => await expectPost201(app, `/rec`, itm, { valor: { valorRec: "1000.00" } }));
 
+        })
     })
 })

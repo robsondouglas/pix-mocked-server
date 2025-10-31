@@ -130,8 +130,8 @@ describe("FAKE_COLLECTION", () => {
             await expect(coll.remove(own, { id: 1 })).resolves.toBeTruthy();
             await expect(coll.remove(own, { id: 2 })).resolves.toBeTruthy();
 
-            await expect(coll.add(own, { id: 1, nome: `REMOVE_${own}` })).resolves.toBeUndefined();
-            await expect(coll.add(own, { id: 2, nome: `REMOVE_${own}` })).resolves.toBeUndefined();
+            await expect(coll.read(own, { id: 1 })).resolves.toBeUndefined();
+            await expect(coll.read(own, { id: 2 })).resolves.toBeUndefined();
         }
     });
 

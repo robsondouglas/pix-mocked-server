@@ -1,4 +1,4 @@
-import { MESSAGES } from "./messages";
+import { MESSAGES } from "../libs/messages";
 
 export type Dictionary<T> = { [key: string]: T };
 

@@ -9,6 +9,8 @@ import { gerarCNPJ } from '../src/libs/documentos';
 import { ModalidadeDesconto, ModalidadeJurosDiasCorridos, ModalidadeMulta, ValidadeVencimento } from '../src/core/app/models';
 import { addDays } from '../src/libs/utils';
 import { CobVValor } from 'src/core/app/models/cobv';
+import { owners } from '../src/data/db.json'
+
 
 describe('COBV', () => {
   let app: INestApplication;
@@ -337,7 +339,7 @@ describe('COBV', () => {
       it('Cabeçalho inválido', async () => {
         await request(app.getHttpServer())
           .patch(`/cobv/${txid}`)
-          .send({ IdOwner, chave, valor: { original: 1 } })
+          .send({ IdOwner: owners[0].id, chave, valor: { original: 1 } })
           .set("mocked-token", "xpto")
           .expect(401)
           .expect((res) => expect(JSON.parse(res.text)).toMatchObject({ status: 401 }));

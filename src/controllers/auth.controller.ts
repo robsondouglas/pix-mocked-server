@@ -1,13 +1,13 @@
-import { Controller, Post, Req } from "@nestjs/common";
+import { Body, Controller, Post, Req } from "@nestjs/common";
 import { Auth } from "../core/auth/auth";
+import { ValidateInput } from "./auth.models";
 
 @Controller("auth")
 export class AuthController {
     constructor(private readonly authService: Auth) { }
 
     @Post()
-    async validate(@Req() req): Promise<any> {
-        const credentials: { grant_type: string, client_id: string, client_secret: string } = req.body;
+    async validate(@Body() credentials:ValidateInput): Promise<any> {
         if (credentials.grant_type != 'client_credentials') {
             throw new Error('Invalid grant_type');
         }

@@ -2,8 +2,6 @@ import { MESSAGES } from "./messages";
 
 export type Dictionary<T> = { [key: string]: T };
 
-
-
 export class MemoryDB {
 
     private static collections: Dictionary<MemoryDB> = {};
@@ -46,6 +44,7 @@ export class MemoryDB {
     }
 
     async add(clusterKey: string, data: any): Promise<any> {
+        
         this.skValidate(data)
         if (await this.read(clusterKey, data)) {
             throw new Error("Duplicate Key");
@@ -56,6 +55,7 @@ export class MemoryDB {
         else {
             this.cluster[clusterKey].push(data);
         }
+        return data;
     }
 
     async patch(clusterKey: string, sortKey: { [name: string]: string | number }, data: any): Promise<any> {

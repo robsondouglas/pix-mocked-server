@@ -8,3 +8,18 @@ Por falta de uma Sandbox decente dos bancos, resolvi iniciar esse projeto.
 
 Swagger utilizado para implementar as funcionalidades estão em:
 https://bacen.github.io/pix-api/
+
+# PARA REALIZAR AS CHAMADAS
+## AUTENTICAÇÃO
+> ### http://localhost:3001/api-docs#/   
+>
+> INFORME AS POSSÍVEIS COMBINAÇÕES
+> 
+> `{"grant_type": "client_credentials", client_id: '123', client_secret: 'abc'} `
+>
+> `{"grant_type": "client_credentials", client_id: '456', client_secret: 'def'} `  
+
+## API
+> ### http://localhost:3000/api-docs#/
+> 
+> UTILIZE O POSTMAN PARA REALIZAR AS REQUISIÇÕES   
